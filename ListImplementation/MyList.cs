@@ -84,7 +84,7 @@ public sealed class MyList<T>
     public bool Remove(T item)
     {
         var index = Array.IndexOf(_items, item);
-        if (index == -1) return false;
+        if (index == -1 || index >= _size) return false;
         RemoveByIndex(index);
         return true;
     }
