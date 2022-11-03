@@ -8,3 +8,4 @@ All projects work on [.Net 6.0 SDK](https://dotnet.microsoft.com/en-us/download/
 1. [Tik-tac-toe](https://github.com/sotiredofyours/Csharp-courses/tree/master/TikTacToe)
 2. [Phone book CRUD`s](https://github.com/sotiredofyours/Csharp-courses/tree/master/PhoneBookCRUD)
 3. [List implementation](https://github.com/sotiredofyours/Csharp-courses/tree/master/ListImplementation)
+4. [Animals](https://github.com/sotiredofyours/Csharp-courses/tree/master/Animals)
