@@ -2,14 +2,21 @@
 
 public struct Point
 {
-    public int X { get; set; }
-    public int Y { get; set; }
+    public double X { get; set; }
+    public double Y { get; set; }
+
+    public Point(double x, double y)
+    {
+        X = x;
+        Y = y;
+    }
 }
 public class Circle
 {
     public int Radius { get; }
     public Point Center { get; }
-    Circle(Point center, int radius)
+
+    public Circle(Point center, int radius)
     {
         Center = center;
         Radius = radius;
@@ -17,6 +24,6 @@ public class Circle
 
     public bool ContainsPoint(Point point)
     {
-        return Math.Pow(point.X - Center.X, 2) + Math.Pow(point.Y - Center.Y, 2) <= Radius;
+        return Math.Pow(point.X - Center.X, 2) + Math.Pow(point.Y - Center.Y, 2) <= Radius * Radius;
     }
 }

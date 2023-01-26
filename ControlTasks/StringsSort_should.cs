@@ -1,10 +1,9 @@
-﻿using System.Reflection;
-using Microsoft.VisualBasic.CompilerServices;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace ControlTasks;
 
-public class StringsSort_Should
+[TestFixture]
+public class StringsSort_should
 {
     [Test]
     public void Sort()
