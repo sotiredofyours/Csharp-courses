@@ -75,7 +75,7 @@ public class StringsSorter : IUseConsole
             }
         }
     }
-    public void CLIOutput()
+    public void Run()
     {
         string workingDirectory = Environment.CurrentDirectory;
         string projectDirectory = Directory.GetParent(workingDirectory)?.Parent.Parent?.FullName;

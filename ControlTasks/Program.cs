@@ -1,2 +1,4 @@
 ﻿
-Console.WriteLine("Hello, World!");
+using ControlTasks;
+
+new MultiplyTableBuilder().Run();

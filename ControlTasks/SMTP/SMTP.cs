@@ -36,7 +36,7 @@ public class SMTP : IUseConsole
         }
     }
 
-    public void CLIOutput()
+    public void Run()
     {
         Console.WriteLine("Введите email отправителя");
         var senderEmail = Console.ReadLine()!;

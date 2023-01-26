@@ -5,7 +5,7 @@ namespace ControlTasks;
 [TestFixture]
 public class StringsSorter_should
 {
-    private readonly StringsSorter _sorter = new StringsSorter();
+    private readonly StringsSorter _sorter = new();
     [Test]
     public void Sort()
     {

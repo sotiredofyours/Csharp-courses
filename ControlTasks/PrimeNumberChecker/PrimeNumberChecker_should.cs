@@ -3,9 +3,9 @@
 namespace ControlTasks;
 
 [TestFixture]
-public class PrimeNumber_should
+public class PrimeNumberChecker_should
 {
-    private readonly PrimeNumber _primeChecker = new PrimeNumber();
+    private readonly PrimeNumberChecker _primeChecker = new();
     
     [TestCase(4)]
     [TestCase(22)]

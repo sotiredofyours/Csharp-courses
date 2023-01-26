@@ -1,6 +1,6 @@
 ﻿namespace ControlTasks;
 
-public class PrimeNumber : IUseConsole
+public class PrimeNumberChecker : IUseConsole
 {
     public bool isPrime(int number)
     {
@@ -11,7 +11,7 @@ public class PrimeNumber : IUseConsole
         }
         return true;
     }
-    public void CLIOutput()
+    public void Run()
     {
         Console.WriteLine("Введите число 0 < x <= 100000");
         var number =Int32.Parse(Console.ReadLine());

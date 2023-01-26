@@ -2,5 +2,5 @@
 
 public interface IUseConsole
 {
-    public void CLIOutput();
+    public void Run();
 }
