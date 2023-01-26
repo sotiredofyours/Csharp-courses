@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace ControlTasks;
 
-public class SMTP
+public class SMTP : IUseConsole
 {
     private static readonly Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 
     private static SmtpClient _client;
 
-    public SMTP()
+    public SMTP() 
     {
         SmtpClient client = new SmtpClient();
         client.Host = "smtp.yandex.ru";
@@ -32,8 +32,17 @@ public class SMTP
             mail.To.Add(new MailAddress(recipientEmail)); 
             mail.Subject = "SMTP";
             mail.Body = "Test message";
-            _client.Send(mail);
+           _client.Send(mail);
         }
     }
-    
+
+    public void CLIOutput()
+    {
+        Console.WriteLine("Введите email отправителя");
+        var senderEmail = Console.ReadLine()!;
+        Console.WriteLine("Введите email получателя");
+        var recipientEmail = Console.ReadLine()!;
+        SendMail(senderEmail, recipientEmail);
+        Console.WriteLine("Сообщение отправлено");
+    }
 }

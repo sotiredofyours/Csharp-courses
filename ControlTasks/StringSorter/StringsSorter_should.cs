@@ -3,15 +3,16 @@
 namespace ControlTasks;
 
 [TestFixture]
-public class StringsSort_should
+public class StringsSorter_should
 {
+    private readonly StringsSorter _sorter = new StringsSorter();
     [Test]
     public void Sort()
     {
         var list = new List<string>() {"b", "c", "d", "e"};
         list.Sort();
         var listForMySort = new List<string>() {"b", "c", "d", "e"};
-        StringsSort.MergeSort(listForMySort, 0, listForMySort.Count - 1);
+        _sorter.MergeSort(listForMySort, 0, listForMySort.Count - 1);
         CollectionAssert.AreEqual(list, listForMySort);
     }
 
@@ -19,7 +20,7 @@ public class StringsSort_should
     public void EmptySort()
     {
         var list = new List<string>();
-        StringsSort.MergeSort(list, 0, list.Count-1);
+        _sorter.MergeSort(list, 0, list.Count-1);
         CollectionAssert.AreEqual(new List<string>(), list);
     }
 
@@ -28,7 +29,7 @@ public class StringsSort_should
     {
         string workingDirectory = Environment.CurrentDirectory;
         string projectDirectory = Directory.GetParent(workingDirectory)?.Parent.Parent?.FullName;
-        var sortedData = StringsSort.Sort( projectDirectory + "\\data.txt");
+        var sortedData = _sorter.Sort( projectDirectory + "\\data.txt");
         Assert.AreEqual(new List<string>(){ "a", "b", "c", "d", "e","f"}, sortedData.Result);
     }
 }

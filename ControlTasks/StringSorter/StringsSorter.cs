@@ -1,10 +1,10 @@
 ﻿namespace ControlTasks;
 
-public static class StringsSort
+public class StringsSorter : IUseConsole
 {
     private static readonly char[] SEPARATORS = new []{';', ',', ' ', '-', '.'};
 
-    public static async Task<List<string>> Sort(string filepath)
+    public async Task<List<string>> Sort(string filepath)
     {
         var data = new List<string>();
         using (StreamReader stream = new StreamReader(filepath))
@@ -22,7 +22,7 @@ public static class StringsSort
         return data;
     }
 
-    public static void MergeSort(List<string> array, int begin, int end)
+    public void MergeSort(List<string> array, int begin, int end)
     {
         if (begin < end)
         {
@@ -73,6 +73,16 @@ public static class StringsSort
                 array[k] = rightArray[right];
                 ++right;
             }
+        }
+    }
+    public void CLIOutput()
+    {
+        string workingDirectory = Environment.CurrentDirectory;
+        string projectDirectory = Directory.GetParent(workingDirectory)?.Parent.Parent?.FullName;
+        var sortedData = Sort( projectDirectory + "\\data.txt");
+        foreach (var word in sortedData.Result)
+        {
+            Console.WriteLine(word);
         }
     }
 }
