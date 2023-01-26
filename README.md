@@ -9,4 +9,5 @@ All projects work on [.Net 6.0 SDK](https://dotnet.microsoft.com/en-us/download/
 2. [Phone book CRUD`s](https://github.com/sotiredofyours/Csharp-courses/tree/master/PhoneBookCRUD)
 3. [List implementation](https://github.com/sotiredofyours/Csharp-courses/tree/master/ListImplementation)
 4. [Animals](https://github.com/sotiredofyours/Csharp-courses/tree/master/Animals)
+
 [Control Tasks](https://github.com/sotiredofyours/Csharp-courses/tree/master/ControlTasks)
