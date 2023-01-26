@@ -1,8 +1,6 @@
-﻿using Microsoft.VisualBasic;
+﻿namespace ControlTasks;
 
-namespace ControlTasks;
-
-public class SortStrings
+public static class StringsSort
 {
     private static readonly char[] SEPARATORS = new []{';', ',', ' ', '-', '.'};
 
@@ -45,12 +43,10 @@ public class SortStrings
         {
             leftArray[i] = array[begin + i];
         }
-
         for (int i = 0; i < rightLength; ++i)
         {
             rightArray[i] = array[middle + i + 1];
         }
-
         var left = 0;
         var right = 0;
         for (int k = begin; k <= end; ++k)
@@ -78,6 +74,5 @@ public class SortStrings
                 ++right;
             }
         }
-
     }
 }

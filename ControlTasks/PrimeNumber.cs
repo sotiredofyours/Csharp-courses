@@ -1,6 +1,6 @@
 ﻿namespace ControlTasks;
 
-public class PrimeNumber
+public static class PrimeNumber
 {
     public static bool isPrime(int number)
     {
