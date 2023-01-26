@@ -1,10 +1,12 @@
-﻿namespace ControlTasks;
+﻿using Microsoft.VisualBasic;
+
+namespace ControlTasks;
 
 public class SortStrings
 {
     private static readonly char[] SEPARATORS = new []{';', ',', ' ', '-', '.'};
 
-    public static async Task Sort(string filepath)
+    public static async Task<List<string>> Sort(string filepath)
     {
         var data = new List<string>();
         using (StreamReader stream = new StreamReader(filepath))
@@ -18,9 +20,11 @@ public class SortStrings
                 }
             }
         }
+        MergeSort(data, 0, data.Count - 1);
+        return data;
     }
 
-    private void MergeSort(List<string> array, int begin, int end)
+    public static void MergeSort(List<string> array, int begin, int end)
     {
         if (begin < end)
         {
@@ -31,7 +35,7 @@ public class SortStrings
         }
     }
 
-    private void Merge(List<string> array, int begin, int middle, int end)
+    private static void Merge(List<string> array, int begin, int middle, int end)
     {
         var leftLength = middle - begin + 1;
         var rightLength = end - middle;
@@ -42,14 +46,38 @@ public class SortStrings
             leftArray[i] = array[begin + i];
         }
 
-        for (int i = 0; i < rightLength; i++)
+        for (int i = 0; i < rightLength; ++i)
         {
             rightArray[i] = array[middle + i + 1];
         }
 
         var left = 0;
         var right = 0;
-        
+        for (int k = begin; k <= end; ++k)
+        {
+            if (left >= leftLength)
+            {
+                array[k] = rightArray[right];
+                ++right;
+                continue;
+            }
+            if (right >= rightLength)
+            {
+                array[k] = leftArray[left];
+                ++left;
+                continue;
+            }
+            if (String.Compare(leftArray[left], rightArray[right], StringComparison.Ordinal) <= 0)
+            {
+                array[k] = leftArray[left];
+                ++left;
+            }
+            else
+            {
+                array[k] = rightArray[right];
+                ++right;
+            }
+        }
 
     }
 }
